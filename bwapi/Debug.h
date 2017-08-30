@@ -9,4 +9,5 @@
 #endif
 #endif
 
+#define BUILD_DEBUG 0
 #define SVN_REV 0
