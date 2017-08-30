@@ -5,7 +5,7 @@
 #include <Util/Convenience.h>
 #include <cassert>
 #include <sstream>
-#include <AclAPI.h>
+#include <aclapi.h>
 
 #include "GameImpl.h"
 #include "PlayerImpl.h"

@@ -1,6 +1,6 @@
 #include "Bitmap.h"
 #include <storm.h>
-#include <util/clamp.h>
+#include <Util/clamp.h>
 #include <algorithm>
 
 #include "Font.h"
