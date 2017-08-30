@@ -1,6 +1,7 @@
 #include "BWAssert.h"
 #include <fstream>
 #include <stdarg.h>
+#include <stdio.h>
 #include <sys/stat.h>
 #include <BWAPI.h>
 
@@ -12,7 +13,7 @@ void log(const char* format, ...)
 
   va_list ap;
   va_start(ap, format);
-  vsnprintf_s(buffer, BUFFER_SIZE, BUFFER_SIZE, format, ap);
+  vsnprintf(buffer, BUFFER_SIZE, format, ap);
   va_end(ap);
 
   FILE *outfile;
@@ -21,8 +22,8 @@ void log(const char* format, ...)
   {
     if (outfile)
     {
-      fprintf_s(outfile, buffer);
-      fprintf_s(outfile, "\n");
+      fprintf(outfile, buffer);
+      fprintf(outfile, "\n");
       fclose(outfile);
     }
   }

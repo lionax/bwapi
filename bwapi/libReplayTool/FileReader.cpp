@@ -2,6 +2,7 @@
 
 #include <windows.h>
 #include <string>
+#include <stdio.h>
 
 using namespace ReplayTool;
 
@@ -51,7 +52,7 @@ bool FileReader::Error(const char *pszMsg)
   FormatMessage(FORMAT_MESSAGE_ALLOCATE_BUFFER | FORMAT_MESSAGE_FROM_SYSTEM, NULL, GetLastError(), 0, (LPSTR)&pszStr, 0, NULL);
 
   char msg[512];
-  sprintf_s(msg, 512, "%s\n%s", pszMsg, pszStr);
+  sprintf(msg, "%s\n%s", pszMsg, pszStr);
   MessageBox(NULL, msg, NULL, MB_OK | MB_ICONERROR);
   LocalFree(pszStr);
   return false;

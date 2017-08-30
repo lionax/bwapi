@@ -9,6 +9,7 @@
 #include "GameAction.h"
 #include "ActionParser.h"
 #include "ParseReplayParams.h"
+#include <stdio.h>
 
 using namespace std;
 using namespace ReplayTool;
@@ -59,7 +60,7 @@ void getActionsTraceFilepath(const ParseReplayParams& params, char actionsDbgFil
 
   actionsDbgFilepath[0] = '\0';
 
-  sprintf_s(actionsDbgFilepath, MAX_PATH, "%s\\%s.trace.txt", params.getOutRepoPath(), replayFilename);
+  sprintf(actionsDbgFilepath, "%s\\%s.trace.txt", params.getOutRepoPath(), replayFilename);
   actionsDbgFile.open(actionsDbgFilepath, ios::in | ios::out | ios::_Nocreate);
 
   // File could be opened successfully which means that a filename collision happened
@@ -74,7 +75,7 @@ void getActionsTraceFilepath(const ParseReplayParams& params, char actionsDbgFil
 
       actionsDbgFilepath[0] = '\0';
       ++nameCollisionID;
-      sprintf_s(actionsDbgFilepath, MAX_PATH, "%s\\%s.%u.trace.txt", params.getOutRepoPath(), replayFilename, nameCollisionID);
+      sprintf(actionsDbgFilepath, "%s\\%s.%u.trace.txt", params.getOutRepoPath(), replayFilename, nameCollisionID);
 
       actionsDbgFile.open(actionsDbgFilepath, ios::in | ios::out | ios::_Nocreate);
     }

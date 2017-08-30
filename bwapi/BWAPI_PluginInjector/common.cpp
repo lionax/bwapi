@@ -1,6 +1,7 @@
 #include <Windows.h>
 #include <cstdio>
 #include <string>
+#include <stdio.h>
 #include <sstream>
 #include <fstream>
 #include <iomanip>
@@ -67,7 +68,7 @@ bool BWAPIError(const char *format, ...)
   char buffer[MAX_PATH];
   va_list ap;
   va_start(ap, format);
-  vsnprintf_s(buffer, MAX_PATH, MAX_PATH, format, ap);
+  vsnprintf(buffer, MAX_PATH, format, ap);
   va_end(ap);
 
   // Get the last error and error message

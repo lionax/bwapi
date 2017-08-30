@@ -5,6 +5,7 @@
 #include "Controller.h"
 
 #include <BWAPI.h>
+#include <stdio.h>
 
 using namespace BWAPI;
 
@@ -244,10 +245,10 @@ void aithread::saveDebug(const char prefix, int iOpcode, const char *pszFormat, 
   {
     va_list ap;
     va_start(ap, pszFormat);
-    vsnprintf_s(szBuffer, 256, 256, pszFormat, ap);
+    vsnprintf(szBuffer, 256, pszFormat, ap);
     va_end(ap);
   }
-  sprintf_s(szFinalBuffer, 512, "%c%s %s", prefix, AISCRIPT::getOpcodeName(iOpcode), szBuffer);
+  sprintf(szFinalBuffer, "%c%s %s", prefix, AISCRIPT::getOpcodeName(iOpcode), szBuffer);
 
   char *tmp = (char*)malloc(strlen(szFinalBuffer)+1);
   strcpy_s(tmp, strlen(szFinalBuffer)+1, szFinalBuffer);

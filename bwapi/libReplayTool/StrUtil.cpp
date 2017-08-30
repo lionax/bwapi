@@ -1,5 +1,6 @@
 #include "StrUtil.h"
 #include <cstdarg>
+#include <stdio.h>
 
 using namespace ReplayTool;
 
@@ -10,7 +11,7 @@ std::string StrUtil::format(const char* format, ...)
   char buffer[bufferMaxSize];
 
   va_start(marker, format);
-  _vsnprintf_s(buffer, bufferMaxSize, format, marker);
+  vsnprintf(buffer, format, marker);
   va_end(marker);
 
   return std::string(buffer);

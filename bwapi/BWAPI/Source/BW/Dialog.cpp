@@ -80,7 +80,7 @@ namespace BW
       case 16: // Scroll down
         break;
       default:
-        sprintf_s(out, 512, "Event: %d\nUser: 0x%p", evt->wNo, (void*)evt->dwUser);
+        sprintf(out, "Event: %d\nUser: 0x%p", evt->wNo, (void*)evt->dwUser);
         MessageBoxA(nullptr, out, "!", MB_OK);
         break;
       }
@@ -94,7 +94,7 @@ namespace BW
     case 18: // Mouse wheel Scroll down
       break;
     default:
-      sprintf_s(out, 512, "Unknown Event: %d\nUser: 0x%p", evt->wNo, (void*)evt->dwUser);
+      sprintf(out, "Unknown Event: %d\nUser: 0x%p", evt->wNo, (void*)evt->dwUser);
       MessageBoxA(nullptr, out, "!", MB_OK);
       break;
     }
@@ -355,7 +355,7 @@ namespace BW
     if ( this && pszStr )
     {
       if ( this->wCtrlType == ctrls::cEDIT && this->pszText)
-        strcpy_s(this->pszText, 255, pszStr);
+        strcpy(this->pszText, pszStr);
       else
         this->pszText = pszStr;
       return true;

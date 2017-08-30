@@ -13,7 +13,7 @@ void DropMessage(int errorlevel, const char *format, ...)
   char szBuffer[512];
   va_list ap;
   va_start(ap, format);
-  vsnprintf_s(szBuffer, 512, 512, format, ap);
+  vsnprintf(szBuffer, 512, format, ap);
   va_end(ap);
 
   HDC screen = GetDC(NULL);
@@ -32,7 +32,7 @@ void DropLastError(const char *format, ...)
   char szBuffer[256];
   va_list ap;
   va_start(ap, format);
-  vsnprintf_s(szBuffer, 256, 256, format, ap);
+  vsnprintf(szBuffer, 256, format, ap);
   va_end(ap);
 
   DWORD dwErrCode = GetLastError();
@@ -41,7 +41,7 @@ void DropLastError(const char *format, ...)
   SEGetErrorStr(dwErrCode, szErrStr);
 
   char szFinalStr[512];
-  sprintf_s(szFinalStr, 512, "Error: 0x%lx;%s;%s", dwErrCode, szBuffer, szErrStr);
+  sprintf(szFinalStr, "Error: 0x%lx;%s;%s", dwErrCode, szBuffer, szErrStr);
 
   /*
   FILE *hLog = fopen(gszLogPath, "a+");
@@ -79,7 +79,7 @@ void OutputStatus(const char *format, ...)
   char szBuffer[512];
   va_list ap;
   va_start(ap, format);
-  vsnprintf_s(szBuffer, 512, 512, format, ap);
+  vsnprintf(szBuffer, 512, format, ap);
   va_end(ap);
 
   HDC screen = GetDC(NULL);

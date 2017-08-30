@@ -1,4 +1,5 @@
 #include "Logger.h"
+#include <stdio.h>
 
 using namespace ReplayTool;
 
@@ -22,8 +23,8 @@ void Logger::writeLine(const char *pszFormat, ...)
   {
     va_list vl;
     va_start(vl,pszFormat);
-    vfprintf_s(file, pszFormat, vl);
-    fprintf_s(file, "\n");
+    vfprintf(file, pszFormat, vl);
+    fprintf(file, "\n");
     va_end(vl);
   }
 }
