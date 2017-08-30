@@ -19,7 +19,6 @@
 #include <BW/Offsets.h>
 
 #include "../Config.h"
-#include "../../../svnrev.h"
 
 #include "../../../Debug.h"
 
@@ -333,7 +332,7 @@ namespace BWAPI
   {
     //called once when Starcraft starts. Not at the start of every match.
     data->instanceID       = gdwProcNum;
-    data->revision         = SVN_REV;
+    data->revision         = 0;
     data->isDebug          = (BUILD_DEBUG == 1);
     data->eventCount       = 0;
     data->eventStringCount = 0;

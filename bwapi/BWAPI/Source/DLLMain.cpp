@@ -10,8 +10,6 @@
 
 #include <BWAPI.h>
 
-#include "../../svnrev.h"
-
 #include "BW/Offsets.h"
 #include "BW/MenuPosition.h"
 #include "BWAPI/GameImpl.h"

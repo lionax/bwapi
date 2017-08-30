@@ -1,5 +1,4 @@
 #include <BWAPI.h>
-#include "../../svnrev.h"
 
 #include "../../Debug.h"
 

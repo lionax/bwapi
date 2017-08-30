@@ -9,3 +9,4 @@
 #endif
 #endif
 
+#define SVN_REV 0

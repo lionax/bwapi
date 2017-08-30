@@ -1,4 +1,3 @@
-#include "../../../svnrev.h"
 #include "GameImpl.h"
 
 #include <cstdio>
@@ -807,7 +806,7 @@ namespace BWAPI
   //--------------------------------------------------- VERSION ----------------------------------------------
   int GameImpl::getRevision() const
   {
-    return SVN_REV;
+    return 0;
   }
   bool GameImpl::isDebug() const
   {
