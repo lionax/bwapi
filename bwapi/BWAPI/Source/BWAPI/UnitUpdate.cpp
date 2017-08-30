@@ -538,7 +538,7 @@ namespace BWAPI
         case Orders::Enum::IncompleteMorphing:
           {
             UnitType type = getBuildQueue[getBuildQueueSlot % 5];
-            self->buildType = type == UnitTypes::None ? self->type : type;
+            self->buildType = type == UnitTypes::None ? BWAPI::UnitType(self->type) : BWAPI::UnitType(type);
           }
           break;
         case Orders::Enum::PlaceBuilding:
